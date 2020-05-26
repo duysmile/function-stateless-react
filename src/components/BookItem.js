@@ -6,23 +6,21 @@ import { ShoppingCartOutlined } from '@ant-design/icons';
 
 const { Meta } = Card;
 
-class BookItem extends React.Component {
-    render() {
-        const {
-            item: { coverUrl, title, description, _id },
-        } = this.props;
-        return (
-            <Card
-                hoverable
-                style={{ width: 300 }}
-                size='small'
-                cover={<img alt="book-cover" src={coverUrl} />}
-                actions={[<ShoppingCartOutlined />]}
-            >
-                <Meta title={title} description={description} />
-            </Card>
-        );
-    }
+const BookItem = (props) => {
+    const {
+        item: { coverUrl, title, description, _id },
+    } = props;
+    return (
+        <Card
+            hoverable
+            style={{ width: 300 }}
+            size='small'
+            cover={<img alt="book-cover" src={coverUrl} />}
+            actions={[<ShoppingCartOutlined />]}
+        >
+            <Meta title={title} description={description} />
+        </Card>
+    );
 }
 
 BookItem.propTypes = {
